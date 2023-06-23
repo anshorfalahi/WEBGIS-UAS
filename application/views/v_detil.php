@@ -53,24 +53,26 @@
 </head>
 
 <body>
-  <div class="detilpeta">
-    <?php foreach($masjid as $data) : ?>
-      <h3>Informasi Detil Masjid</h3>
-      <h5>Nama Masjid : <?= $data['nama_masjid']; ?></h5>
-      <h5>Alamat Masjid : <?= $data['alamat_masjid']; ?></h5>
-      <h5>Luas Tanah Masjid : <?= $data['luas_tanah']; ?></h5>
-      <h5>Luas Bangunan Masjid : <?= $data['luas_bangunan']; ?></h5>
-      <h5>Tahun Berdiri Masjid : <?= $data['tahun_berdiri']; ?></h5>
-      <?php endforeach; ?>
+  <div class="container-fluid">
+    <div class="detilpeta">
+      <?php foreach($masjid as $data) : ?>
+        <h3>Informasi Detil Masjid</h3>
+        <h5>Nama Masjid : <?= $data['nama_masjid']; ?></h5>
+        <h5>Alamat Masjid : <?= $data['alamat_masjid']; ?></h5>
+        <h5>Luas Tanah Masjid : <?= $data['luas_tanah']; ?></h5>
+        <h5>Luas Bangunan Masjid : <?= $data['luas_bangunan']; ?></h5>
+        <h5>Tahun Berdiri Masjid : <?= $data['tahun_berdiri']; ?></h5>
+        <?php endforeach; ?>
+    </div>
+      <div class="peta">
+          <div id="mapid"></div>
+      </div>
+      <div class="foto owl-carousel md-3">
+          <?php foreach($dok as $data) { ?>
+          <img src="<?= base_url()?>assets/images/<?= $data['gambar'] ?>">
+          <?php } ?>
+      </div>
   </div>
-    <div class="peta">
-        <div id="mapid"></div>
-    </div>
-    <div class="foto owl-carousel">
-        <?php foreach($dok as $data) { ?>
-        <img src="<?= base_url()?>assets/images/<?= $data['gambar'] ?>">
-        <?php } ?>
-    </div>
     
     
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -88,6 +90,14 @@
     autoplay:1000,
     autoplayTimeout:2000,
     autoplayHoverPause:true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 1
+      },
+    }
   });
 </script>
 
