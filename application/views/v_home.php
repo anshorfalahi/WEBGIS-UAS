@@ -50,9 +50,14 @@
           <div class="container-fluid">
             <h1 class="text-center">WEB GIS UAS Infomasi Masjid Kec. Bati-Bati</h1>
             <div class="row">
-              <div class="col-md-12">
-              <button id="deleteRouteBtn" class="btn btn-danger" style="float: left;">Hapus Routing</button>
-              <button id="showPoly" class="btn btn-primary" style="float: right;">Routing</button>
+              <div class="col-md-18">
+              <button id="deleteRouteBtn" class="btn btn-danger" style="float: right;">Hapus Routing</button>
+              <!-- <button id="enablePolygon" class="btn btn-primary" style="float: right;">Polygon</button> 
+              <button id="disablePolygon" class="btn btn-primary" style="float: right;">Polygon</button> -->
+              <div class="btn-group" role="group" aria-label="Basic example" style="float: left">
+                <button id="enablePolygon" type="button" class="btn btn-primary">Polygon +</button>
+                <button id="disablePolygon" type="button" class="btn btn-primary">Polygon -</button>
+              </div>
               <h4 class="text-center">Muhammad Anshor Falahi</h4>
 
                 <div id="mapid"></div>
@@ -180,6 +185,26 @@
               }
             });   
           }
+
+          $.getJSON(base_url+"assets/geojson/map.geojson", function(result){
+            var geoLayer = L.geoJson(result, {
+              style: function (feature) {
+                return {
+                  color: 'yellow',
+                  weight: 1,
+                  opacity: 1,
+                  fillOpacity: 0.2,
+                };
+              }
+            }).addTo(map);
+
+            document.getElementById("disablePolygon").addEventListener("click", function() {
+              map.removeLayer(geoLayer);
+            });
+            document.getElementById("enablePolygon").addEventListener("click", function() {
+              map.addLayer(geoLayer);
+            });
+          });
           </script>
   </body>
 </html>
