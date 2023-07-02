@@ -1,5 +1,5 @@
 ###################
-Web GIS Infomasi Masjid Kecamatan Bati-Bati, Tanah Laut, Kalimantan Selatan.
+Web GIS Infomasi Masjid Kecamatan Bati-Bati, Tanah Laut, Kalimantan Selatan, Indonesia.
 ###################
 
 - `Data Detail Masjid <https://kalsel.kemenag.go.id/files/file/HumasKUB/bf71574176626.pdf>`_.
