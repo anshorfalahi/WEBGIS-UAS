@@ -20,15 +20,6 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
         
         <style type="text/css">
-          /* body{
-            padding: 0;
-            margin: 0;
-            overflow: hidden;
-          }
-          .user{
-            padding:5px;
-            margin-bottom: 5px;
-          } */
           #mapid {
               height: 870px;
               width: 100%;
